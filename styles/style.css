@@ -1,5 +1,311 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--bg-image);
+  background-color: var(--bg-color);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.header {
+  display: grid;
+  block-size: max(668px, 100vh);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  position: relative;
+  padding: var(--main-padding);
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  block-size: 25px;
+  inline-size: 25px;
+  border-inline-end: 1px solid var(--accent-color);
+  border-block-start: 1px solid var(--accent-color);
+  right: var(--main-padding);
+  top: var(--main-padding);
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  block-size: 25px;
+  inline-size: 25px;
+  border-inline-start: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--accent-color);
+  bottom: var(--main-padding);
+  left: var(--main-padding);
+}
+
+.header__lightbulb {
+  justify-self: end;
+  color: var(--accent-color);
+  position: absolute;
+  top: var(--main-padding);
+  right: 21px;
+}
+
+.header__lightbulb::after {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  block-size: 9px;
+  inline-size: 9px;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  margin-inline-start: 10px;
+}
+
+.header__theme-menu {
+  align-self: end;
+  justify-self: end;
+  color: var(--accent-color);
+  grid-column: 2;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.header__theme-menu-button {
+  line-height: 18px;
+  display: inline-block;
+  block-size: 26px;
+  inline-size: 70px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid rgba(255, 0, 112, 0.4);
+  padding: 1.5px 13px;
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-color);
+  padding: 1.5px 13px;
+  pointer-events: none;
+}
+
+.title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: var(--title-color);
+  font-weight: 700;
+  line-height: 83%;
+}
+
+.header__title {
+  align-self: center;
+  justify-self: center;
+  grid-column: span 2;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header__description {
+  grid-column: span 2;
+  block-size: min-content;
+  margin-block-start: -11px;
+}
+
+.title__decor {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  font-weight: 700;
+  font-size: var(--main-font-size);
+}
+
+.main {
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+  padding: 40px var(--main-padding);
+}
+
+.card {
+  display: grid;
+  gap: 20px;
+}
+
+.card__title {
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23.4px;
+}
+
+.card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card__list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card__text {
+  color: var(--text-color);
+}
+
+.accent__link {
+  text-decoration: none;
+  text-shadow: 1px 1px 0 var(--accent-color);
+}
+
+.accent__link:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.accent__link:focus-visible {
+  outline: 1px solid var(--text-color);
+}
+
+.how__heading {
+  font-weight: 400;
+}
+
+.card__pictures {
+  gap: var(--main-padding);
+}
+
+.card__images {
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer {
+  display: flex;
+  block-size: max(667px, 100vh);
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__title {
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+@media (width >=768px) {
+  :root {
+    --main-padding: 20px;
+  }
+
+  .header__lightbulb {
+    right: 29px;
+  }
+
+  .header__theme-menu {
+    margin-block-end: -25px;
+  }
+
+  .title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__title {
+    margin-inline-start: -20px;
+    justify-self: start;
+  }
+
+  .header__description {
+    margin-block-start: -33px;
+    grid-column: 2;
+  }
+
+  .main {
+    padding-block: 60px;
+    gap: 80px;
+  }
+
+  .card {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .what__list {
+    grid-column: span 2;
+  }
+
+  .card__pictures {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pictures__title {
+    grid-column: span 3;
+  }
+
+  .sunset__image {
+    grid-column: 1/3;
+  }
+
+  .ice-cream__image {
+    grid-column: 3;
+    grid-row: 2/4;
+  }
+
+  .tape__image {
+    grid-column: 1;
+    grid-row: 3/5;
+  }
+
+  .books__image {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .street__image {
+    grid-column: 2/4;
+    grid-row: 4/5;
+  }
+}
+
+@media (width >= 1024px) {
+  .header__title {
+    grid-column: span 3;
+  }
+
+  .header__description {
+    margin: 0;
+    max-inline-size: 491px;
+    grid-column: 2/4;
+    justify-self: end;
+  }
+
+  .header__theme-menu {
+    grid-column: span 2;
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .what__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .what__list-item-concentration {
+    grid-column: 1;
+  }
+
+  .what__list-item-food {
+    grid-column: 2;
+  }
+
+  .what__list-item-gadgets {
+    grid-column: 3;
+  }
 }
