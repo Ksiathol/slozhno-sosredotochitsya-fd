@@ -2,8 +2,12 @@
   --bg-image: url("../images/cover-image-dark.png");
   --bg-color: #000028;
   --accent-color: #ff0070;
+  --accent-text-color: #000028;
   --text-color: #f1b2ce;
+  --nav-color: #ff0070;
+  --nav-hover-color: rgba(255, 0, 112, 0.4);
   --title-color: #db00ff;
+  --card-title-color: #ff0070;
   --main-font-size: 18px;
   --main-padding: 10px;
 }

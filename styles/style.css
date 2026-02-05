@@ -21,8 +21,8 @@
   position: absolute;
   block-size: 25px;
   inline-size: 25px;
-  border-inline-end: 1px solid var(--accent-color);
-  border-block-start: 1px solid var(--accent-color);
+  border-inline-end: 1px solid var(--nav-color);
+  border-block-start: 1px solid var(--nav-color);
   right: var(--main-padding);
   top: var(--main-padding);
 }
@@ -32,8 +32,8 @@
   position: absolute;
   block-size: 25px;
   inline-size: 25px;
-  border-inline-start: 1px solid var(--accent-color);
-  border-block-end: 1px solid var(--accent-color);
+  border-inline-start: 1px solid var(--nav-color);
+  border-block-end: 1px solid var(--nav-color);
   bottom: var(--main-padding);
   left: var(--main-padding);
 }
@@ -60,7 +60,7 @@
 .header__theme-menu {
   align-self: end;
   justify-self: end;
-  color: var(--accent-color);
+  color: var(--nav-color);
   grid-column: 2;
 }
 
@@ -81,17 +81,17 @@
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid rgba(255, 0, 112, 0.4);
+  border: 1px solid var(--nav-hover-color);
   padding: 1.5px 13px;
 }
 
 .header__theme-menu-button:focus-visible {
   outline: none;
-  border-bottom: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--nav-color);
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--nav-color);
   padding: 1.5px 13px;
   pointer-events: none;
 }
@@ -118,7 +118,7 @@
 
 .title__decor {
   background-color: var(--accent-color);
-  color: var(--bg-color);
+  color: var(--accent-text-color);
   font-weight: 700;
   font-size: var(--main-font-size);
 }
@@ -136,7 +136,7 @@
 }
 
 .card__title {
-  color: var(--accent-color);
+  color: var(--card-title-color);
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
@@ -237,6 +237,10 @@
     grid-column: span 2;
   }
 
+  .how__list {
+    grid-column: 2;
+  }
+
   .card__pictures {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -292,20 +296,16 @@
     flex-direction: row;
   }
 
+  .card {
+    grid-template-columns: 315px 1fr;
+  }
+
   .what__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .what__list-item-concentration {
-    grid-column: 1;
-  }
-
-  .what__list-item-food {
-    grid-column: 2;
-  }
-
-  .what__list-item-gadgets {
-    grid-column: 3;
+  .card__pictures {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
